@@ -9,7 +9,29 @@
 // Phil's Account Object
 // ]
 
-export function getAllAccountsWithSumsOfDepositsLess2000(array) {}
+export function getAllAccountsWithSumsOfDepositsLess2000(array) {
+  let answer = [];
+  let total = 0;
+  let valCount = 0;
+  array.forEach((key) => {
+    if (key?.deposits != undefined) {
+      key.deposits.forEach((val) => {
+        total += val;
+      });
+      if (total < 2000) {
+        console.log(`${key.name}: ${total} is under 2000`);
+        answer.push(key);
+      } else {
+        console.log(`${key.name}: ${total} is over 2000`);
+      }
+      total = 0;
+    } else {
+      answer.push(key);
+      console.log(`${key.name} has no deposits`);
+    }
+  });
+  return answer;
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

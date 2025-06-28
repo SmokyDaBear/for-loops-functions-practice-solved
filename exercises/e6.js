@@ -5,7 +5,14 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+  var answer = [];
+  for (var key of array) {
+    if (key.balance === 0) {
+      answer.push(key.name);
+    }
+  }
+  console.log(answer);
+  return answer;
 }
 
 // === TEST YOURSELF ===
