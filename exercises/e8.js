@@ -5,8 +5,8 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-  var answer = [];
-  for (var key of array) {
+  let answer = [];
+  for (let key of array) {
     if (answer[0]?.balance == undefined) {
       answer = [key];
     } else if (key.balance > answer[0].balance) {

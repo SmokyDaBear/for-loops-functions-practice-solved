@@ -5,17 +5,16 @@
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-  var answer = [];
-  array.forEach((key) => {
+  let answer = [];
+  for (let key of array) {
     if (key?.deposits != undefined) {
-      key.deposits.forEach((val) => {
-        console.log(val);
+      for (let val of key.deposits) {
         if (val > 100) {
           answer.push(val);
         }
-      });
+      }
     }
-  });
+  }
   return answer;
 }
 

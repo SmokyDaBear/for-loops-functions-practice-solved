@@ -7,15 +7,16 @@
 export function flatArrays(array) {
   // Your code goes here...
   let answer = [];
-  array.forEach((item) => {
+  for (let item of array) {
     if (Array.isArray(item)) {
-      item.forEach((i) => {
+      //is this OK using the .isArray method?
+      for (let i of item) {
         answer.push(i);
-      });
+      }
     } else {
       answer.push(item);
     }
-  });
+  }
   return answer;
 }
 

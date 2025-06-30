@@ -11,25 +11,19 @@
 
 export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   let answer = [];
-  let total = 0;
-  let valCount = 0;
-  array.forEach((key) => {
+  for (let key of array) {
+    let total = 0;
     if (key?.deposits != undefined) {
-      key.deposits.forEach((val) => {
+      for (let val of key.deposits) {
         total += val;
-      });
-      if (total < 2000) {
-        console.log(`${key.name}: ${total} is under 2000`);
-        answer.push(key);
-      } else {
-        console.log(`${key.name}: ${total} is over 2000`);
       }
-      total = 0;
+      if (total < 2000) {
+        answer.push(key);
+      }
     } else {
       answer.push(key);
-      console.log(`${key.name} has no deposits`);
     }
-  });
+  }
   return answer;
 }
 

@@ -5,13 +5,15 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-  let answer = new String();
-  array.forEach((s) => {
-    answer += s;
-    answer += separator;
-  });
-  answer = answer.slice(0, -1);
-  console.log(answer);
+  let answer = "";
+  for (let s = 0; s < array.length; s++) {
+    answer += array[s];
+    if (s == array.length - 1) {
+      break;
+    } else {
+      answer += separator;
+    }
+  }
   return answer;
 }
 

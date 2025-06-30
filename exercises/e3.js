@@ -26,16 +26,12 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-  var sum = 0;
-  const strLength = str.length; //Question, is this the same as putting it directly in the loop, or is it more efficient since it only does the calculation once instead of every loop iteration?
-  console.log(str);
-  for (var i = 0; i < strLength; i++) {
-    if (/\d/.test(str.charAt(i))) {
-      //look I used a RegExpression!
-      sum += parseInt(str.charAt(i));
+  let sum = 0;
+  for (let i of str) {
+    if (parseInt(i)) {
+      sum += +i;
     }
   }
-  console.log(sum);
   return sum;
 }
 

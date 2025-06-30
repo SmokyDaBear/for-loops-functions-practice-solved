@@ -6,19 +6,16 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-  var totalsArr = [];
-  var total = 0;
-
-  array.forEach((key) => {
-    if (key?.withdrawals != undefined) {
-      const w = key.withdrawals;
-      for (let i = 0; i < w.length; i++) {
-        total += Number(w[i]);
+  let totalsArr = [];
+  for (let key of array) {
+    let total = 0;
+    if (key.withdrawals) {
+      for (let i of key.withdrawals) {
+        total += +i;
       }
     }
     totalsArr.push(total);
-    total = 0;
-  });
+  }
   return totalsArr;
 }
 

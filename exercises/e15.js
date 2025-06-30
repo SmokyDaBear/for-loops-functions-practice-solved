@@ -6,12 +6,12 @@
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
   let answer = [];
-  arr1.forEach((item) => {
+  for (let item of arr1) {
     answer.push(item);
-  });
-  arr2.forEach((item) => {
+  }
+  for (let item of arr2) {
     answer.push(item);
-  });
+  }
   return answer;
 }
 

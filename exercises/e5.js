@@ -5,11 +5,10 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-  var names = [];
-  for (var key of array) {
+  let names = [];
+  for (let key of array) {
     names.push(key.name);
   }
-  console.log(names);
   return names;
 }
 

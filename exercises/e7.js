@@ -8,18 +8,12 @@ import { test } from "vitest";
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  var answer = [];
-  for (var key of array) {
-    //console.log(key);
-    if (
-      key.balance > 0 &&
-      (answer[0]?.balance == undefined //found this trick for optional chaining. Is this a good practice to prevent the function failing? I'm rolling with it for now...
-        ? true
-        : key.balance < answer[0].balance
-        ? true
-        : false)
-    ) {
-      answer = [key];
+  let answer = [];
+  for (let key of array) {
+    if (key.balance > 0) {
+      if (answer[0]?.balance === undefined || key.balance < answer[0].balance) {
+        answer = [key];
+      }
     }
   }
   return answer;

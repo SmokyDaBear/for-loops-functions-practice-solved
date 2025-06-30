@@ -6,28 +6,25 @@
 
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
-  var answer = [];
-  var balance = 0;
-  var totalPlus = 0;
-  var totalMinus = 0;
-  array.forEach((key) => {
-    balance = key.balance;
-    totalMinus = 0;
-    totalPlus = 0;
-    if (key?.withdrawals != undefined) {
-      key.withdrawals.forEach((val) => {
+  let answer = [];
+  for (let key of array) {
+    let balance = key.balance;
+    let totalMinus = 0;
+    let totalPlus = 0;
+    if (key.withdrawals) {
+      for (let val of key.withdrawals) {
         totalMinus += val;
-      });
+      }
     }
-    if (key?.deposits != undefined) {
-      key.deposits.forEach((val) => {
+    if (key.deposits) {
+      for (let val of key.deposits) {
         totalPlus += val;
-      });
+      }
     }
     if (totalPlus - totalMinus != balance) {
       answer.push(key);
     }
-  });
+  }
   return answer;
 }
 

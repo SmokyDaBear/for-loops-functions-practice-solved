@@ -6,16 +6,18 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-  var separator = new RegExp(/a/i);
   let withA = [];
   let withoutA = [];
-  array.forEach((item) => {
-    if (separator.test(item)) {
-      withA.push(item);
-    } else {
-      withoutA.push(item);
+  for (let item of array) {
+    for (let i = 0; i < item.length; i++) {
+      if (item[i] == "a" || item[i] == "A") {
+        withA.push(item);
+        break;
+      } else if (i == item.length - 1) {
+        withoutA.push(item);
+      }
     }
-  });
+  }
   return [withA, withoutA];
 }
 

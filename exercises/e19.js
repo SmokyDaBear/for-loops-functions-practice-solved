@@ -5,11 +5,10 @@
 
 export function reverseArray(array) {
   // Your code goes here...
-  var answer = [];
-  for (var i = array.length - 1; i >= 0; i--) {
+  let answer = [];
+  for (let i = array.length - 1; i >= 0; i--) {
     answer.push(array[i]);
   }
-  //console.log(array, answer);
   return answer;
 }
 

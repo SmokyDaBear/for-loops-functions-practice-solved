@@ -5,11 +5,12 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-  var answer = [];
-  const cipher = new RegExp(`${letter}`, "i");
-  for (var key of array) {
-    if (cipher.test(key.name)) {
-      answer.push(key.name);
+  let answer = [];
+  for (let key of array) {
+    for (let i of key.name.toLowerCase()) {
+      if (i == letter.toLowerCase()) {
+        answer.push(key.name);
+      }
     }
   }
   return answer;
